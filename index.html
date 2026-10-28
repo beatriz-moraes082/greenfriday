@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3 Noites + Jantar · Villa da Mata</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Reserve a partir de 3 noites no Sítio Villa da Mata, em São Miguel dos Milagres, e ganhe um jantar a dois no Bistrô.">
+<meta property="og:title" content="3 noites + jantar · Sítio Villa da Mata">
+<meta property="og:description" content="Reserve a partir de 3 noites e ganhe um jantar a dois no Bistrô. São Miguel dos Milagres, Alagoas.">
+<meta property="og:image" content="img/experiencias_06.jpg">
+<!-- Ao subir no domínio da pousada: colar aqui o snippet do GTM do site (GTM-N87QTJHH) -->
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Marcellus&display=swap">
+<style>
+/* Layout: o site da Villa em versão de campanha. Fundo claro, fotos verticais em sequência.
+   Marcellus (letra de inscrição, pedra e madeira) nos títulos e no letreiro; Figtree no texto e na interface. */
+:root{
+  --papel:#f6f2ed;      /* fundo, o creme do site */
+  --papel-2:#ede6dd;    /* faixa alternada */
+  --branco:#fdfcfa;
+  --marrom:#8f6a3c;     /* marrom da marca */
+  --marrom-esc:#6c4f2b;
+  --tinta:#2b2723;
+  --cinza:#665e57;
+  --linha:#d8cdc0;
+  --noite:#1e1b18;      /* rodapé */
+  --f-titulo:"Marcellus", "Trajan Pro", Georgia, serif;
+  --f-texto:"Figtree", "Helvetica Neue", Arial, sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  --topo-h:72px;
+  --ease:cubic-bezier(.23,1,.32,1);       /* mesma curva do site da Trilha */
+  --ease-soft:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--papel)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-titulo);font-weight:400;margin:0;line-height:1.15;text-wrap:balance}
+h2{font-size:clamp(2rem,3.6vw,2.8rem);letter-spacing:.01em}
+h3{font-size:1.3rem;letter-spacing:.01em}
+p{margin:0}
+section,[id]{scroll-margin-top:calc(var(--topo-h) + 16px)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.caps{font-size:.7rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--marrom-esc)}
+.sub{color:var(--cinza)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.fila:focus-visible{outline:2px solid var(--marrom);outline-offset:3px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 2.4em;background:var(--tinta);border:1px solid var(--tinta);color:var(--branco);font-family:var(--f-texto);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--marrom);border-color:var(--marrom)}
+.btn-borda{background:transparent;color:var(--tinta);border-color:rgba(43,39,35,.45)}
+.btn-borda:hover{background:var(--tinta);border-color:var(--tinta);color:var(--branco)}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+.link{color:var(--marrom-esc);text-decoration:none;font-weight:500;border-bottom:1px solid var(--linha);padding-bottom:2px}
+.link:hover{border-color:var(--marrom)}
+
+/* Cabeçalho: transparente sobre as fotos, fica sólido ao rolar */
+.topo{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:30;color:var(--branco);transition:background .25s,color .25s,box-shadow .25s}
+.topo .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:var(--topo-h);gap:16px}
+.topo nav{display:flex;gap:26px}
+.topo nav a{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.9}
+.topo nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.topo .logo img{height:52px;width:auto;transition:filter .25s}
+.topo .reservar{justify-self:end;min-height:42px;padding:0 1.2em;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);color:var(--branco);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.topo .reservar:hover{background:var(--branco);color:var(--tinta)}
+.topo.solido{background:rgba(246,242,237,.96);color:var(--tinta);box-shadow:0 1px 0 var(--linha);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.topo.solido .logo img{filter:brightness(0) saturate(100%) invert(40%) sepia(33%) saturate(640%) hue-rotate(353deg) brightness(90%)}
+.topo.solido .reservar{background:var(--tinta);border-color:var(--tinta);color:var(--branco)}
+@media (max-width:860px){.topo nav{display:none}.topo .wrap{grid-template-columns:auto 1fr}:root{--topo-h:64px}.topo .logo img{height:42px}}
+
+/* Topo da página: três fotos e o letreiro */
+.hero{position:relative;overflow:hidden;background:var(--noite);color:var(--branco)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));height:clamp(560px,82vh,780px)}
+.trio img{width:100%;height:100%;object-fit:cover}
+.trio img:nth-child(2){object-position:50% 60%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,14,.62) 0%,rgba(20,17,14,.34) 30%,rgba(20,17,14,.46) 60%,rgba(20,17,14,.74) 100%);pointer-events:none}
+.letreiro{position:absolute;z-index:2;inset:auto 0 0 0;padding-bottom:clamp(120px,15vh,150px);text-align:center;display:grid;gap:16px;justify-items:center;padding-left:var(--gut);padding-right:var(--gut-r)}
+.letreiro .local{font-size:.7rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;opacity:.88}
+.letreiro h1{font-size:clamp(2.2rem,5.2vw,4.2rem);letter-spacing:.2em;text-transform:uppercase;line-height:1.1;margin-right:-.2em}
+.letreiro .fio{width:56px;height:1px;background:rgba(255,255,255,.55)}
+.letreiro p.frase{font-size:clamp(1rem,1.4vw,1.15rem);font-weight:400;letter-spacing:.02em;max-width:30em;opacity:.92}
+@media (max-width:860px){
+  .trio{grid-template-columns:1fr;height:auto}
+  .trio img{aspect-ratio:3/4;height:auto}
+  .trio img:nth-child(1),.trio img:nth-child(3){display:none}
+  .letreiro{padding-bottom:110px}
+  .letreiro .local{font-size:.68rem;letter-spacing:.18em}
+}
+
+/* Busca de datas */
+.busca-faixa{position:relative;z-index:3;margin-top:-58px}
+.busca{background:var(--branco);box-shadow:0 30px 60px -32px rgba(30,27,24,.45);display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto}
+.campo{position:relative;display:grid;gap:6px;align-content:center;padding:18px 28px;min-width:0;cursor:pointer;transition:background .25s}
+.campo+.campo::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:1px;background:var(--linha)}
+.campo::after{content:"";position:absolute;right:28px;top:50%;margin-top:4px;width:6px;height:6px;border-right:1px solid var(--marrom);border-bottom:1px solid var(--marrom);transform:rotate(45deg)}
+.campo:hover{background:var(--papel)}
+.campo label{font-size:.64rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--marrom);cursor:pointer}
+.campo .valor{font-family:var(--f-titulo);font-size:1.2rem;line-height:1.3;color:var(--tinta);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:20px}
+.campo input,.campo select{position:absolute;inset:0;width:100%;height:100%;opacity:0;border:0;padding:0;margin:0;cursor:pointer;appearance:none;-webkit-appearance:none;font-size:16px}
+@media (hover:hover) and (pointer:fine){.campo input[type=date]{pointer-events:none}}
+.busca .btn{min-height:100%;padding:0 2.8em;border:0}
+.resumo{grid-column:1/-1;margin:0;padding:13px 28px;border-top:1px solid var(--linha);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 24px;font-size:.88rem;color:var(--cinza)}
+.resumo strong{color:var(--tinta);font-weight:500}
+.resumo .aviso{color:var(--marrom-esc)}
+.resumo .zap-link{color:var(--tinta);text-decoration:none;border-bottom:1px solid var(--linha);padding-bottom:1px;transition:border-color .2s}
+.resumo .zap-link:hover{border-color:var(--marrom)}
+@media (max-width:960px){
+  .busca{grid-template-columns:1fr 1fr}
+  .campo{padding:16px 20px}
+  .campo::after{right:20px}
+  .campo-hosp{grid-column:1/-1;border-top:1px solid var(--linha)}
+  .campo-hosp::before{display:none}
+  .busca .btn{grid-column:1/-1;min-height:56px}
+  .resumo{padding:12px 20px}
+}
+
+/* Seções */
+.secao{padding-block:clamp(72px,9vw,120px)}
+.alt{background:var(--papel-2)}
+
+.oferta .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.oferta-texto{display:grid;gap:22px;max-width:30em}
+.inclui{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--linha)}
+.inclui li{padding:14px 0;border-bottom:1px solid var(--linha);font-family:var(--f-titulo);font-size:1.02rem;letter-spacing:.12em;text-transform:uppercase}
+.moldura{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden}
+.moldura img{width:100%;height:100%;object-fit:cover}
+.moldura::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.7);pointer-events:none}
+@media (max-width:860px){.oferta .wrap{grid-template-columns:1fr}.moldura{order:-1;aspect-ratio:4/4.4}}
+
+.jantar .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,88px);align-items:start}
+.jantar-texto{display:grid;gap:20px;position:sticky;top:calc(var(--topo-h) + 32px);max-width:30em}
+.prato{display:grid;gap:4px;padding-top:16px;border-top:1px solid var(--linha)}
+.prato p{font-size:.98rem;color:var(--cinza)}
+.fotos-jantar{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fotos-jantar figure{margin:0}
+.fotos-jantar img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.fotos-jantar figure:nth-child(2){margin-top:72px}
+@media (max-width:860px){.jantar .wrap{grid-template-columns:1fr}.jantar-texto{position:static}.fotos-jantar figure:nth-child(2){margin-top:40px}}
+
+/* Chalé: fotos em fila, com setas no desktop */
+.chale-cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 48px;margin-bottom:32px}
+.chale-cab>div:first-child{display:grid;gap:14px;max-width:34em}
+.chale-acoes{display:flex;align-items:center;gap:20px}
+.setas{display:none;gap:8px}
+.setas button{width:46px;height:46px;border:1px solid var(--linha);background:var(--branco);color:var(--tinta);cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.setas button:hover:not(:disabled){border-color:var(--marrom);background:var(--papel-2)}
+.setas button:disabled{opacity:.35;cursor:default}
+.setas svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+@media (hover:hover) and (pointer:fine){.setas{display:flex}}
+.fila{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.fila::-webkit-scrollbar{display:none}
+.fila-in{display:flex;gap:14px;width:max-content;padding-left:max(var(--gut),calc((100vw - 1180px)/2 + 16px));padding-right:var(--gut-r)}
+.fila img{height:clamp(380px,52vw,560px);width:auto;aspect-ratio:2/3;object-fit:cover;scroll-snap-align:start;scroll-margin-left:max(var(--gut),calc((100vw - 1180px)/2 + 16px))}
+.fila-dica{margin-top:12px;font-size:.9rem;color:var(--cinza)}
+@media (hover:hover) and (pointer:fine){.fila-dica{display:none}}
+
+.pousada .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px 80px}
+.pousada h2{grid-column:1/-1}
+.pousada h3{margin-bottom:8px}
+.pousada ul{margin:0;padding:0;list-style:none}
+.pousada li{padding:11px 0;border-bottom:1px solid var(--linha)}
+.pousada li span{color:var(--cinza)}
+@media (max-width:760px){.pousada .wrap{grid-template-columns:1fr}}
+
+.lugar .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,88px);align-items:center}
+.lugar-foto{aspect-ratio:4/5;max-width:100%}
+.lugar-foto img{width:100%;height:100%;object-fit:cover}
+.lugar-texto{display:grid;gap:18px;max-width:30em}
+@media (max-width:860px){.lugar .wrap{grid-template-columns:1fr}.lugar-foto{aspect-ratio:4/3.4}}
+
+.reservar .wrap{display:grid;gap:36px}
+.dois{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--linha)}
+.dois>div{display:grid;gap:14px;align-content:start;padding:32px 40px 8px 0}
+.dois>div+div{padding-left:40px;border-left:1px solid var(--linha)}
+.dois .btn{justify-self:start;margin-top:8px}
+.tel{font-family:var(--f-titulo);font-size:1.6rem;user-select:all}
+.letra-miuda{font-size:.92rem;color:var(--cinza);max-width:52em;border-top:1px solid var(--linha);padding-top:24px}
+@media (max-width:760px){.dois{grid-template-columns:1fr}.dois>div{padding:28px 0 4px}.dois>div+div{padding-left:0;border-left:0;border-top:1px solid var(--linha);margin-top:24px}}
+
+.rodape{background:var(--noite);color:#cfc5b9;padding-block:56px 36px;font-size:.98rem}
+.rodape .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.rodape img{height:64px;width:auto}
+.rodape h4{margin:0 0 10px;font-weight:600;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#a99a86}
+.rodape p{margin:0 0 4px}
+.rodape a{text-decoration:none;border-bottom:1px solid rgba(207,197,185,.3)}
+.rodape .base{grid-column:1/-1;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:.85rem;color:#8d8276}
+@media (max-width:760px){.rodape .wrap{grid-template-columns:1fr}.rodape{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}}
+
+/* WhatsApp flutuante (desktop) e barra de reserva (celular) */
+.zap{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:20;width:54px;height:54px;border-radius:50%;background:var(--tinta);border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.2);transition:background .3s}
+.zap:hover{background:var(--marrom)}
+.zap svg{width:26px;height:26px;fill:var(--branco)}
+.barra{display:none}
+@media (max-width:760px){
+  .zap{display:none}
+  .barra{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(246,242,237,.97);border-top:1px solid var(--linha);padding:10px var(--gut-r) calc(10px + env(safe-area-inset-bottom,0px)) var(--gut);transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.2,1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .barra.on{transform:none}
+  .topo.solido .reservar{display:none}
+  .barra .btn{min-height:48px;padding:0 .8em;font-size:.68rem;letter-spacing:.16em}
+  .barra .info{grid-column:1/-1;font-size:.82rem;color:var(--cinza);text-align:center;line-height:1.3}
+}
+/* Movimento, na linguagem do site da Trilha */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.w>span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease) calc(var(--i) * 55ms + var(--base,0ms))}
+.is-in .w>span,.is-ready .letreiro h1 .w>span{transform:none}
+.letreiro h1{--base:350ms}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease) calc(var(--d,0) * 90ms + 120ms),transform .9s var(--ease) calc(var(--d,0) * 90ms + 120ms)}
+.js .rv.is-in{opacity:1;transform:none}
+.js [data-in]{opacity:0;transform:translateY(16px)}
+.is-ready [data-in]{opacity:1;transform:none;transition:opacity 1s var(--ease) calc(var(--in,0) * 110ms + 250ms),transform 1s var(--ease) calc(var(--in,0) * 110ms + 250ms)}
+.js .img-rv{overflow:hidden;clip-path:inset(10% 0 10% 0);transition:clip-path 1.4s var(--ease-soft)}
+.js .img-rv img{transform:scale(1.12);transition:transform 1.8s var(--ease-soft)}
+.js .img-rv.is-in{clip-path:inset(0 0 0 0)}
+.js .img-rv.is-in img{transform:scale(1)}
+.js .trio img{transform:scale(1.1);transition:transform 2.2s var(--ease-soft)}
+.js .trio img:nth-child(2){transition-delay:.12s}.js .trio img:nth-child(3){transition-delay:.24s}
+.is-ready .trio img{transform:none}
+.trio{overflow:hidden;will-change:transform}
+.js .fila img.rv{transform:translateX(40px)}
+.js .fila img.rv.is-in{transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .w>span,.js .rv,.js [data-in],.js .img-rv,.js .img-rv img,.js .trio img,.js .fila img.rv{opacity:1!important;transform:none!important;clip-path:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <nav aria-label="Seções">
+      <a href="#oferta">A oferta</a>
+      <a href="#jantar">O jantar</a>
+      <a href="#chale">O chalé</a>
+      <a href="#reservar">Como reservar</a>
+    </nav>
+    <a class="logo" href="https://www.sitiovilladamata.com.br" target="_blank" rel="noopener" aria-label="Sítio Villa da Mata"><img src="img/logo-branco.png" alt="Sítio Villa da Mata" width="700" height="394"></a>
+    <a class="btn reservar" href="#datas">Escolher datas</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="titulo">
+  <div class="trio">
+    <img src="img/chale_05.jpg" alt="Hóspede na piscina privativa do chalé">
+    <img src="img/experiencias_06.jpg" alt="Mesa posta para dois no Bistrô" fetchpriority="high">
+    <img src="img/experiencias_05.jpg" alt="Café da manhã servido na varanda">
+  </div>
+  <div class="letreiro">
+    <span class="local" data-in="0">São Miguel dos Milagres · Alagoas</span>
+    <h1 id="titulo" data-split>3 noites + jantar</h1>
+    <span class="fio" aria-hidden="true" data-in="5"></span>
+    <p class="frase" data-in="6">Reserve a partir de 3 noites e ganhe um jantar a dois no Bistrô.</p>
+  </div>
+</section>
+
+<div class="busca-faixa" id="datas" data-in="8">
+  <div class="wrap">
+    <form class="busca" id="busca" aria-label="Escolha suas datas">
+      <div class="campo" data-alvo="checkin">
+        <label for="checkin">Chegada</label>
+        <span class="valor" id="v-checkin" aria-hidden="true"></span>
+        <input type="date" id="checkin" name="checkin" required>
+      </div>
+      <div class="campo" data-alvo="checkout">
+        <label for="checkout">Partida</label>
+        <span class="valor" id="v-checkout" aria-hidden="true"></span>
+        <input type="date" id="checkout" name="checkout" required>
+      </div>
+      <div class="campo campo-hosp" data-alvo="adultos">
+        <label for="adultos">Hóspedes</label>
+        <span class="valor" id="v-adultos" aria-hidden="true">2 adultos</span>
+        <select id="adultos" name="adultos">
+          <option value="1">1 adulto</option>
+          <option value="2" selected>2 adultos</option>
+          <option value="3">3 adultos</option>
+          <option value="4">4 adultos</option>
+        </select>
+      </div>
+      <a class="btn js-motor" href="https://villadamata.soufoco.com.br/" target="_blank" rel="noopener">Ver disponibilidade</a>
+      <p class="resumo" aria-live="polite">
+        <span><span id="resumo-datas"></span> <span class="aviso" id="aviso" hidden>Ajustamos a partida para 3 noites, o mínimo da oferta.</span></span>
+        <a class="zap-link js-wa" href="https://wa.me/5582993179086" data-datas="1" target="_blank" rel="noopener">Prefere conversar? Reserve pelo WhatsApp</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+<section class="secao oferta" id="oferta" aria-labelledby="t-oferta">
+  <div class="wrap">
+    <div class="oferta-texto">
+      <h2 id="t-oferta">O que está incluso</h2>
+      <p class="sub">A oferta vale para qualquer reserva a partir de 3 noites, conforme a disponibilidade.</p>
+      <!-- A CONFIRMAR: vale para as suítes? Vale em feriados, Natal e Réveillon? Até quando fica no ar? -->
+      <ul class="inclui">
+        <li>Chalé com piscina privativa</li>
+        <li>Café da manhã todos os dias</li>
+        <li>Jantar a dois no Bistrô</li>
+        <li>A 900 m da Praia do Riacho</li>
+        <li>Você escolhe a data</li>
+      </ul>
+      <div><a class="btn" href="#datas">Escolher datas</a></div>
+    </div>
+    <div class="moldura img-rv"><img src="img/chale_05.jpg" alt="Piscina privativa do chalé, cercada pela mata" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="secao alt jantar" id="jantar" aria-labelledby="t-jantar">
+  <div class="wrap">
+    <div class="jantar-texto">
+      <h2 id="t-jantar">O jantar no Bistrô</h2>
+      <!-- A CONFIRMAR: o jantar é para o casal? O que entra (entrada, prato, sobremesa, bebidas)? -->
+      <p>Em uma das noites, a mesa de vocês fica reservada no Bistrô da pousada. A cozinha usa ingredientes da região e compra direto de pescadores e produtores locais.</p>
+      <div class="prato">
+        <h3>Burrata da região</h3>
+        <p>Com rúcula, pesto de castanha de caju, tomate-cereja confitado e torradinha de manteiga de garrafa.</p>
+      </div>
+      <div class="prato">
+        <h3>Risoto de jerimum</h3>
+        <p>Creme de jerimum e caldo de legumes, com camarões crocantes e crispy de couve.</p>
+      </div>
+      <p class="sub" style="font-size:.92rem">Pratos do cardápio da casa.</p>
+    </div>
+    <div class="fotos-jantar">
+      <figure class="img-rv"><img src="img/gastronomia_pratos_03_01.jpg" alt="Hóspede à mesa no Bistrô" loading="lazy"></figure>
+      <figure class="img-rv"><img src="img/gastronomia_drink_01.jpg" alt="Casal brindando no Bistrô" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="secao chale" id="chale" aria-labelledby="t-chale">
+  <div class="wrap chale-cab">
+    <div>
+      <h2 id="t-chale">O chalé</h2>
+      <p class="sub">Madeira, pedra e vidro, com a mata do lado de fora e uma piscina só para vocês na varanda.</p>
+    </div>
+    <div class="chale-acoes">
+      <a class="link" href="https://www.sitiovilladamata.com.br/acomodacoes" target="_blank" rel="noopener">Ver as acomodações no site</a>
+      <div class="setas">
+        <button type="button" id="ant" aria-label="Fotos anteriores"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" id="prox" aria-label="Próximas fotos"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="fila" id="fila" tabindex="0" aria-label="Fotos do chalé">
+    <div class="fila-in">
+      <img src="img/chale_03.jpg" alt="Hóspede no chalé, com porta de vidro aberta para a mata" loading="lazy">
+      <img src="img/chale_02.jpg" alt="Casal no quarto do chalé" loading="lazy">
+      <img src="img/experiencias_04.jpg" alt="Piscina privativa entre as árvores" loading="lazy">
+      <img src="img/chale_06.jpg" alt="Interior do chalé com vista para a mata" loading="lazy">
+      <img src="img/introducao_03.jpg" alt="Deck com espreguiçadeira" loading="lazy">
+      <img src="img/chale_01.jpg" alt="Hóspede descansando no chalé" loading="lazy">
+    </div>
+  </div>
+  <p class="wrap fila-dica">Arraste para o lado para ver mais fotos.</p>
+</section>
+
+<section class="secao alt pousada" aria-labelledby="t-pousada">
+  <div class="wrap">
+    <h2 id="t-pousada">Na pousada</h2>
+    <div>
+      <h3>Para todos os hóspedes</h3>
+      <ul>
+        <li>Café da manhã</li>
+        <li>Piscina</li>
+        <li>Academia e sauna</li>
+        <li>Bicicletas</li>
+        <li>Serviço de praia <span>(cadeiras, guarda-sóis e coolers)</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Se quiserem incluir</h3>
+      <ul>
+        <li>Café da manhã no quarto <span>(na varanda ou na piscina, com bandeja flutuante)</span></li>
+        <li>Noite romântica <span>(quarto decorado com pétalas e flores)</span></li>
+        <li>Picnic a dois</li>
+        <li>Aquecimento da piscina privativa</li>
+      </ul>
+      <p class="sub" style="margin-top:14px;font-size:.98rem">Cobrados à parte. É só pedir pelo <a class="link js-wa" href="https://wa.me/5582993179086" data-msg="Olá! Quero a oferta 3 noites + jantar e saber dos extras (café no quarto, noite romântica, picnic)." target="_blank" rel="noopener">WhatsApp</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao lugar" aria-labelledby="t-lugar">
+  <div class="wrap">
+    <div class="lugar-foto img-rv"><img src="img/experiencias_home_01.jpg" alt="Bicicleta, guarda-sol e canga na areia da Praia do Riacho, vistos de cima" loading="lazy"></div>
+    <div class="lugar-texto">
+      <h2 id="t-lugar">Onde fica</h2>
+      <p>Em São Miguel dos Milagres, na Rota Ecológica dos Milagres, litoral norte de Alagoas. A Praia do Riacho fica a 900 m da pousada, dá para ir de bicicleta.</p>
+      <p class="sub">Estrada do Riacho Dourado, S/N · São Miguel dos Milagres, AL</p>
+      <div><a class="link" href="https://maps.app.goo.gl/hdgKgfjQzFGEgrV57" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao alt reservar" id="reservar" aria-labelledby="t-reservar">
+  <div class="wrap">
+    <h2 id="t-reservar">Como reservar</h2>
+    <div class="dois">
+      <div>
+        <span class="caps">Pelo site</span>
+        <p>Escolha as datas e veja os valores no motor de reservas. Dá para parcelar em até 4x no cartão ou ter 5% de desconto no Pix.</p>
+        <!-- A CONFIRMAR: quem reserva pelo site recebe o jantar? Se houver cupom no Soufoco, colocar no link (?cupom=). -->
+        <a class="btn js-motor" href="https://villadamata.soufoco.com.br/" target="_blank" rel="noopener">Ver disponibilidade no site</a>
+      </div>
+      <div>
+        <span class="caps">Pelo WhatsApp</span>
+        <p>Mande as datas para a equipe da pousada e eles montam a reserva com o jantar.</p>
+        <p class="tel">(82) 99317-9086</p>
+        <a class="btn btn-borda js-wa" href="https://wa.me/5582993179086" data-datas="1" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+    <p class="letra-miuda">Oferta válida para reservas a partir de 3 noites, sujeita à disponibilidade. O jantar a dois no Bistrô é agendado com a equipe. Check-in às 14h e check-out às 12h. Datas especiais podem ter condições próprias. Valores sujeitos a alteração.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div><img src="img/logo-branco.png" alt="Sítio Villa da Mata" width="700" height="394" loading="lazy"></div>
+    <div>
+      <h4>Reservas</h4>
+      <p>WhatsApp <a class="js-wa" href="https://wa.me/5582993179086" target="_blank" rel="noopener">(82) 99317-9086</a></p>
+      <p>contato@sitiovilladamata.com.br</p>
+      <p><a class="js-motor" href="https://villadamata.soufoco.com.br/" target="_blank" rel="noopener">Motor de reservas</a></p>
+    </div>
+    <div>
+      <h4>Endereço</h4>
+      <p>Estrada do Riacho Dourado, S/N</p>
+      <p>São Miguel dos Milagres, AL</p>
+      <p><a href="https://www.instagram.com/sitiovilladamata" target="_blank" rel="noopener">@sitiovilladamata</a></p>
+    </div>
+    <p class="base">© 2026 Sítio Villa da Mata · <a href="https://www.sitiovilladamata.com.br" target="_blank" rel="noopener">sitiovilladamata.com.br</a></p>
+  </div>
+</footer>
+
+<a class="zap js-wa" href="https://wa.me/5582993179086" data-datas="1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.7 12.7-12.6C28.8 8.6 23.1 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C5.2 9.8 10 5.1 16 5.1s10.8 4.7 10.8 10.5S22 26.1 16 26.1zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<div class="barra" id="barra" aria-label="Reservar">
+  <span class="info" id="barra-info"></span>
+  <a class="btn js-motor" href="https://villadamata.soufoco.com.br/" target="_blank" rel="noopener">Ver datas</a>
+  <a class="btn btn-borda js-wa" href="https://wa.me/5582993179086" data-datas="1" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.7 12.7-12.6C28.8 8.6 23.1 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C5.2 9.8 10 5.1 16 5.1s10.8 4.7 10.8 10.5S22 26.1 16 26.1z"/></svg>WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var ZAP = "5582993179086";
+  var MOTOR = "https://villadamata.soufoco.com.br/search/";
+  var MIN = 3;
+  var BASE = "Olá! Quero a oferta 3 noites + jantar no Bistrô.";
+  var inEl = document.getElementById("checkin");
+  var outEl = document.getElementById("checkout");
+  var adEl = document.getElementById("adultos");
+  var resumoEl = document.getElementById("resumo-datas");
+  var avisoEl = document.getElementById("aviso");
+  var barraInfo = document.getElementById("barra-info");
+
+  function iso(d){ return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); }
+  function parse(s){ var p = s.split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function soma(d, n){ var x = new Date(d); x.setDate(x.getDate()+n); return x; }
+  function br(s){ var p = s.split("-"); return p[2] + "/" + p[1]; }
+  function curto(s){
+    try { return parse(s).toLocaleDateString("pt-BR", {weekday:"short", day:"numeric", month:"short"}).replace(/\./g, "").replace(" de ", " "); }
+    catch(e){ return br(s); }
+  }
+  function longo(s){
+    try { return parse(s).toLocaleDateString("pt-BR", {weekday:"short", day:"numeric", month:"short"}).replace(/\./g, ""); }
+    catch(e){ return br(s); }
+  }
+
+  var hoje = new Date(); hoje.setHours(0,0,0,0);
+  var ini = soma(hoje, 14);
+  inEl.min = iso(soma(hoje, 1));
+  inEl.value = iso(ini);
+  outEl.value = iso(soma(ini, MIN));
+
+  function atualiza(ev){
+    if (!inEl.value) return;
+    var ci = parse(inEl.value);
+    var minOut = soma(ci, MIN);
+    outEl.min = iso(minOut);
+    var ajustou = false;
+    if (!outEl.value || parse(outEl.value) < minOut){ outEl.value = iso(minOut); ajustou = !!(ev && ev.target === outEl); }
+    avisoEl.hidden = !ajustou;
+    var n = Math.round((parse(outEl.value) - ci) / 864e5);
+    var ad = adEl.value;
+    var txt = n + " noites, de " + longo(inEl.value) + " a " + longo(outEl.value);
+    document.getElementById("v-checkin").textContent = curto(inEl.value);
+    document.getElementById("v-checkout").textContent = curto(outEl.value);
+    document.getElementById("v-adultos").textContent = adEl.options[adEl.selectedIndex].text;
+    resumoEl.innerHTML = "<strong>" + n + " noites</strong> · jantar a dois no Bistrô incluso";
+    barraInfo.textContent = txt;
+    var motor = MOTOR + inEl.value + "/" + outEl.value + "/" + ad;
+    document.querySelectorAll(".js-motor").forEach(function(a){ a.href = motor; });
+    var datas = " Check-in " + br(inEl.value) + ", check-out " + br(outEl.value) + " (" + n + " noites), " + ad + (ad === "1" ? " adulto." : " adultos.");
+    document.querySelectorAll(".js-wa").forEach(function(a){
+      var msg = a.getAttribute("data-msg") || BASE;
+      if (a.hasAttribute("data-datas")) msg += datas;
+      a.href = "https://wa.me/" + ZAP + "?text=" + encodeURIComponent(msg);
+    });
+  }
+  [inEl, outEl, adEl].forEach(function(el){ el.addEventListener("change", atualiza); });
+  document.getElementById("busca").addEventListener("submit", function(e){ e.preventDefault(); });
+
+  // Clicar em qualquer ponto do campo abre o calendário / a lista
+  document.querySelectorAll(".campo").forEach(function(c){
+    c.addEventListener("click", function(e){
+      var el = document.getElementById(c.getAttribute("data-alvo"));
+      if (e.target === el) return;
+      if (el.showPicker) { try { el.showPicker(); return; } catch(err){} }
+      el.focus(); el.click();
+    });
+  });
+  atualiza();
+
+  // Cabeçalho sólido depois das fotos; barra do celular quando a busca sai da tela
+  var topo = document.getElementById("topo");
+  var hero = document.querySelector(".hero");
+  var barra = document.getElementById("barra");
+  var datas = document.getElementById("datas");
+  function rolar(){
+    var y = window.scrollY;
+    topo.classList.toggle("solido", y > hero.offsetHeight - topo.offsetHeight - 10);
+    var r = datas.getBoundingClientRect();
+    barra.classList.toggle("on", r.bottom < 0);
+  }
+  window.addEventListener("scroll", rolar, {passive:true});
+  window.addEventListener("resize", rolar);
+  rolar();
+
+  // Setas da galeria
+  var fila = document.getElementById("fila");
+  var ant = document.getElementById("ant"), prox = document.getElementById("prox");
+  function passo(){ var img = fila.querySelector("img"); return img ? img.getBoundingClientRect().width + 14 : 300; }
+  function setas(){
+    ant.disabled = fila.scrollLeft < 4;
+    prox.disabled = fila.scrollLeft + fila.clientWidth >= fila.scrollWidth - 4;
+  }
+  ant.addEventListener("click", function(){ fila.scrollBy({left:-passo(), behavior:"smooth"}); });
+  prox.addEventListener("click", function(){ fila.scrollBy({left:passo(), behavior:"smooth"}); });
+  fila.addEventListener("scroll", setas, {passive:true});
+  window.addEventListener("load", setas);
+  setas();
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduzido = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $$ = function(q, c){ return Array.prototype.slice.call((c || document).querySelectorAll(q)); };
+
+  // Títulos em palavras: cada palavra sobe de dentro de uma máscara
+  $$("h2").forEach(function(h){ h.setAttribute("data-split", ""); });
+  $$("[data-split]").forEach(function(el){
+    var i = 0;
+    (function walk(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(ch){
+        if (ch.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          ch.textContent.split(/(\s+)/).forEach(function(tok){
+            if (!tok) return;
+            if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(" ")); return; }
+            var w = document.createElement("span"); w.className = "w";
+            var s = document.createElement("span"); s.textContent = tok; s.style.setProperty("--i", i++);
+            w.appendChild(s); frag.appendChild(w);
+          });
+          ch.replaceWith(frag);
+        } else if (ch.nodeType === 1) walk(ch);
+      });
+    })(el);
+  });
+
+  // Blocos que entram em cascata dentro de cada grupo
+  var grupos = [
+    ".oferta-texto > :not(h2)", ".inclui li",
+    ".jantar-texto > :not(h2)",
+    ".chale-cab p", ".chale-acoes", ".fila img",
+    ".pousada .wrap > div",
+    ".lugar-texto > :not(h2)",
+    ".dois > div", ".letra-miuda",
+    ".rodape .wrap > *"
+  ];
+  grupos.forEach(function(q){
+    $$(q).forEach(function(el, k){ el.classList.add("rv"); el.style.setProperty("--d", k); });
+  });
+  $$("[data-in]").forEach(function(el){ el.style.setProperty("--in", el.getAttribute("data-in")); });
+
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.documentElement.classList.add("is-ready"); }); });
+
+  if (!("IntersectionObserver" in window) || reduzido) {
+    $$(".rv, [data-split], .img-rv").forEach(function(el){ el.classList.add("is-in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        en.target.classList.add("is-in");
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+    $$(".rv, [data-split]:not(#titulo), .img-rv").forEach(function(el){ io.observe(el); });
+  }
+
+  // Rolagem suave
+  var lenis = null;
+  if (window.Lenis && !reduzido) {
+    lenis = new window.Lenis({ lerp: 0.1 });
+    (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(0);
+  }
+  var topoH = function(){ return document.getElementById("topo").offsetHeight; };
+  $$('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click", function(e){
+      var id = a.getAttribute("href");
+      var alvo = id.length > 1 ? document.querySelector(id) : null;
+      if (!alvo) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(alvo, { duration: 1.4, offset: -(topoH() + 16) });
+      else alvo.scrollIntoView({ behavior: reduzido ? "auto" : "smooth" });
+    });
+  });
+
+  // Leve paralaxe nas fotos do topo
+  var trio = document.querySelector(".trio");
+  var hero = document.querySelector(".hero");
+  if (!reduzido && matchMedia("(min-width: 861px)").matches) {
+    var pend = false;
+    var move = function(){
+      pend = false;
+      var y = window.scrollY;
+      if (y > hero.offsetHeight) return;
+      trio.style.transform = "translate3d(0," + (y * 0.18).toFixed(1) + "px,0)";
+    };
+    window.addEventListener("scroll", function(){ if (!pend) { pend = true; requestAnimationFrame(move); } }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
