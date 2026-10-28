@@ -1,11 +1,11 @@
 # Villa da Mata · Green Friday
 
-Landing page da Green Friday do Sítio Villa da Mata (São Miguel dos Milagres, AL), com as três ofertas da campanha. O repositório manteve o nome da primeira versão (3 noites + jantar).
+Landing page da Green Friday do Sítio Villa da Mata (São Miguel dos Milagres, AL), com as três ofertas da campanha. O repositório começou como a LP "3 noites + jantar" e foi renomeado para greenfriday em 28/10/2026.
 
-No ar em: https://beatriz-moraes082.github.io/lp-villa-da-mata-3-noites/
+No ar em: https://beatriz-moraes082.github.io/greenfriday/
 
 - `index.html`: página única, sem build. Lenis (rolagem suave) vem do jsDelivr.
-- `img/`: fotos do site da pousada em WebP, imagem de compartilhamento (`og-3-noites-jantar.jpg`, 1200×630) e ícones.
+- `img/`: fotos do site da pousada em WebP, imagem de compartilhamento (`og-green-friday.jpg`, 1200×630) e ícones.
 - `fonts/`: Marcellus e Figtree (Google Fonts, licença OFL), hospedadas aqui para não travar o carregamento.
 
 ## Reserva e rastreamento
