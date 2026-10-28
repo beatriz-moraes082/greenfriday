@@ -19,7 +19,23 @@
 <meta property="og:image:alt" content="Prato do Bistrô do Sítio Villa da Mata">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Google Tag Manager (mesmo container do site da pousada) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N87QTJHH');</script>
+<!-- Carrega 1,5 s depois do load ou na primeira interação, o que vier antes, para não disputar a primeira tela.
+     Eventos enviados antes disso ficam no dataLayer e são processados quando o GTM chega. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+(function(w,d){
+  var feito = false;
+  function carregaGTM(){
+    if (feito) return; feito = true;
+    w.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var j = d.createElement('script'); j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N87QTJHH';
+    d.head.appendChild(j);
+  }
+  ['pointerdown','keydown','scroll','touchstart'].forEach(function(ev){ w.addEventListener(ev, carregaGTM, {once:true, passive:true}); });
+  w.addEventListener('load', function(){ setTimeout(carregaGTM, 1500); });
+})(window, document);
+</script>
 <!-- Fim do Google Tag Manager -->
 <script>document.documentElement.classList.add("js")</script>
 <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png">
@@ -293,7 +309,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
 .rodape{background:var(--noite);color:#cfc5b9;padding-block:56px 36px;font-size:.98rem}
 .rodape .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
 .rodape img{height:64px;width:auto}
-.rodape h4{margin:0 0 10px;font-weight:600;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#a99a86}
+.rodape .tit{margin:0 0 10px;font-weight:600;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#a99a86}
 .rodape p{margin:0 0 4px}
 .rodape a{text-decoration:none;border-bottom:1px solid rgba(207,197,185,.3)}
 .rodape .base{grid-column:1/-1;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:.85rem;color:#8d8276}
@@ -358,9 +374,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
 
 <section class="hero" aria-labelledby="titulo">
   <div class="trio">
-    <picture><source media="(max-width: 860px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img width="801" height="1200" class="t1" src="img/chale_05.webp" alt="Hóspede na piscina privativa do chalé"></picture>
-    <img width="800" height="1200" class="t2" src="img/experiencias_06.webp" alt="Mesa posta para dois no Bistrô" fetchpriority="high">
-    <picture><source media="(max-width: 860px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img width="800" height="1200" class="t3" src="img/experiencias_05.webp" alt="Café da manhã servido na varanda"></picture>
+    <picture><source media="(max-width: 860px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img width="801" height="1200" class="t1" src="img/chale_05.webp" srcset="img/chale_05-400.webp 400w, img/chale_05-600.webp 600w, img/chale_05.webp 800w" sizes="34vw" alt="Hóspede na piscina privativa do chalé"></picture>
+    <img width="800" height="1200" class="t2" src="img/experiencias_06.webp" srcset="img/experiencias_06-400.webp 400w, img/experiencias_06-600.webp 600w, img/experiencias_06.webp 800w" sizes="(max-width: 860px) 100vw, 34vw" alt="Mesa posta para dois no Bistrô" fetchpriority="high">
+    <picture><source media="(max-width: 860px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><img width="800" height="1200" class="t3" src="img/experiencias_05.webp" srcset="img/experiencias_05-400.webp 400w, img/experiencias_05-600.webp 600w, img/experiencias_05.webp 800w" sizes="34vw" alt="Café da manhã servido na varanda"></picture>
   </div>
   <div class="letreiro">
     <h1 id="titulo"><span class="local" data-in="0">São Miguel dos Milagres · Alagoas</span> <span class="titulo-txt" data-split>3 noites + jantar</span></h1>
@@ -418,7 +434,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
       </ul>
       <div><a class="btn" href="#datas">Escolher datas</a></div>
     </div>
-    <div class="moldura img-rv"><img width="801" height="1200" src="img/chale_05.webp" alt="Piscina privativa do chalé, cercada pela mata" loading="lazy"></div>
+    <div class="moldura img-rv"><img width="801" height="1200" src="img/chale_05.webp" srcset="img/chale_05-400.webp 400w, img/chale_05-600.webp 600w, img/chale_05.webp 800w" sizes="(max-width: 860px) calc(100vw - 32px), 560px" alt="Piscina privativa do chalé, cercada pela mata" loading="lazy"></div>
   </div>
 </section>
 
@@ -439,8 +455,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
       <p class="sub" style="font-size:.92rem">Pratos do cardápio da casa.</p>
     </div>
     <div class="fotos-jantar">
-      <figure class="img-rv"><img width="800" height="1200" src="img/gastronomia_pratos_03_01.webp" alt="Hóspede à mesa no Bistrô" loading="lazy"></figure>
-      <figure class="img-rv"><img width="800" height="1200" src="img/gastronomia_drink_01.webp" alt="Casal brindando no Bistrô" loading="lazy"></figure>
+      <figure class="img-rv"><img width="800" height="1200" src="img/gastronomia_pratos_03_01.webp" srcset="img/gastronomia_pratos_03_01-400.webp 400w, img/gastronomia_pratos_03_01-600.webp 600w, img/gastronomia_pratos_03_01.webp 800w" sizes="(max-width: 860px) 50vw, 330px" alt="Hóspede à mesa no Bistrô" loading="lazy"></figure>
+      <figure class="img-rv"><img width="800" height="1200" src="img/gastronomia_drink_01.webp" srcset="img/gastronomia_drink_01-400.webp 400w, img/gastronomia_drink_01-600.webp 600w, img/gastronomia_drink_01.webp 800w" sizes="(max-width: 860px) 50vw, 330px" alt="Casal brindando no Bistrô" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -461,12 +477,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
   </div>
   <div class="fila" id="fila" tabindex="0" aria-label="Fotos do chalé">
     <div class="fila-in">
-      <img width="800" height="1200" src="img/chale_03.webp" alt="Hóspede no chalé, com porta de vidro aberta para a mata" loading="lazy">
-      <img width="800" height="1200" src="img/chale_02.webp" alt="Casal no quarto do chalé" loading="lazy">
-      <img width="801" height="1200" src="img/experiencias_04.webp" alt="Piscina privativa entre as árvores" loading="lazy">
-      <img width="800" height="1200" src="img/chale_06.webp" alt="Interior do chalé com vista para a mata" loading="lazy">
-      <img width="800" height="1200" src="img/introducao_03.webp" alt="Deck com espreguiçadeira" loading="lazy">
-      <img width="800" height="1200" src="img/chale_01.webp" alt="Hóspede descansando no chalé" loading="lazy">
+      <img width="800" height="1200" src="img/chale_03.webp" srcset="img/chale_03-400.webp 400w, img/chale_03-600.webp 600w, img/chale_03.webp 800w" sizes="(max-width: 860px) 260px, 375px" alt="Hóspede no chalé, com porta de vidro aberta para a mata" loading="lazy">
+      <img width="800" height="1200" src="img/chale_02.webp" srcset="img/chale_02-400.webp 400w, img/chale_02-600.webp 600w, img/chale_02.webp 800w" sizes="(max-width: 860px) 260px, 375px" alt="Casal no quarto do chalé" loading="lazy">
+      <img width="801" height="1200" src="img/experiencias_04.webp" srcset="img/experiencias_04-400.webp 400w, img/experiencias_04-600.webp 600w, img/experiencias_04.webp 800w" sizes="(max-width: 860px) 260px, 375px" alt="Piscina privativa entre as árvores" loading="lazy">
+      <img width="800" height="1200" src="img/chale_06.webp" srcset="img/chale_06-400.webp 400w, img/chale_06-600.webp 600w, img/chale_06.webp 800w" sizes="(max-width: 860px) 260px, 375px" alt="Interior do chalé com vista para a mata" loading="lazy">
+      <img width="800" height="1200" src="img/introducao_03.webp" srcset="img/introducao_03-400.webp 400w, img/introducao_03-600.webp 600w, img/introducao_03.webp 800w" sizes="(max-width: 860px) 260px, 375px" alt="Deck com espreguiçadeira" loading="lazy">
+      <img width="800" height="1200" src="img/chale_01.webp" srcset="img/chale_01-400.webp 400w, img/chale_01-600.webp 600w, img/chale_01.webp 800w" sizes="(max-width: 860px) 260px, 375px" alt="Hóspede descansando no chalé" loading="lazy">
     </div>
   </div>
   <p class="wrap fila-dica">Arraste para o lado para ver mais fotos.</p>
@@ -500,7 +516,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
 
 <section class="secao lugar" aria-labelledby="t-lugar">
   <div class="wrap">
-    <div class="lugar-foto img-rv"><img width="800" height="1200" src="img/experiencias_home_01.webp" alt="Bicicleta, guarda-sol e canga na areia da Praia do Riacho, vistos de cima" loading="lazy"></div>
+    <div class="lugar-foto img-rv"><img width="800" height="1200" src="img/experiencias_home_01.webp" srcset="img/experiencias_home_01-400.webp 400w, img/experiencias_home_01-600.webp 600w, img/experiencias_home_01.webp 800w" sizes="(max-width: 860px) calc(100vw - 32px), 550px" alt="Bicicleta, guarda-sol e canga na areia da Praia do Riacho, vistos de cima" loading="lazy"></div>
     <div class="lugar-texto">
       <h2 id="t-lugar">Onde fica</h2>
       <p>Em São Miguel dos Milagres, na Rota Ecológica dos Milagres, litoral norte de Alagoas. A Praia do Riacho fica a 900 m da pousada, dá para ir de bicicleta.</p>
@@ -537,13 +553,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
   <div class="wrap">
     <div><img src="img/logo-branco.png" alt="Sítio Villa da Mata" width="700" height="394" loading="lazy"></div>
     <div>
-      <h4>Reservas</h4>
+      <p class="tit">Reservas</p>
       <p>WhatsApp <a class="js-wa" href="https://wa.me/5582993179086" target="_blank" rel="noopener">(82) 99317-9086</a></p>
       <p>contato@sitiovilladamata.com.br</p>
       <p><a class="js-motor" href="https://villadamata.soufoco.com.br/" target="_blank" rel="noopener">Motor de reservas</a></p>
     </div>
     <div>
-      <h4>Endereço</h4>
+      <p class="tit">Endereço</p>
       <p>Estrada do Riacho Dourado, S/N</p>
       <p>São Miguel dos Milagres, AL</p>
       <p><a href="https://www.instagram.com/sitiovilladamata" target="_blank" rel="noopener">@sitiovilladamata</a></p>
@@ -638,15 +654,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
   var hero = document.querySelector(".hero");
   var barra = document.getElementById("barra");
   var datas = document.getElementById("datas");
+  // Alturas medidas só no carregamento e no resize, nunca a cada rolagem
+  var limiteTopo = 0, fimDatas = 0;
+  function medir(){
+    limiteTopo = hero.offsetHeight - topo.offsetHeight - 10;
+    fimDatas = datas.getBoundingClientRect().bottom + window.scrollY;
+    rolar();
+  }
   function rolar(){
     var y = window.scrollY;
-    topo.classList.toggle("solido", y > hero.offsetHeight - topo.offsetHeight - 10);
-    var r = datas.getBoundingClientRect();
-    barra.classList.toggle("on", r.bottom < 0);
+    topo.classList.toggle("solido", y > limiteTopo);
+    barra.classList.toggle("on", y > fimDatas);
   }
   window.addEventListener("scroll", rolar, {passive:true});
-  window.addEventListener("resize", rolar);
-  rolar();
+  window.addEventListener("resize", medir);
+  window.addEventListener("load", medir);
+  requestAnimationFrame(medir);
 
   // Setas da galeria
   var fila = document.getElementById("fila");
@@ -759,11 +782,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
   var trio = document.querySelector(".trio");
   var hero = document.querySelector(".hero");
   if (!reduzido && matchMedia("(min-width: 861px)").matches) {
-    var pend = false;
+    var pend = false, alturaHero = hero.offsetHeight;
+    window.addEventListener("resize", function(){ alturaHero = hero.offsetHeight; });
     var move = function(){
       pend = false;
       var y = window.scrollY;
-      if (y > hero.offsetHeight) return;
+      if (y > alturaHero) return;
       trio.style.transform = "translate3d(0," + (y * 0.18).toFixed(1) + "px,0)";
     };
     window.addEventListener("scroll", function(){ if (!pend) { pend = true; requestAnimationFrame(move); } }, { passive: true });
