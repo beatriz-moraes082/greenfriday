@@ -1,6 +1,6 @@
-# Villa da Mata · 3 noites + jantar
+# Villa da Mata · Green Friday
 
-Landing page da oferta do Sítio Villa da Mata (São Miguel dos Milagres, AL): reserve a partir de 3 noites e ganhe um jantar a dois no Bistrô.
+Landing page da Green Friday do Sítio Villa da Mata (São Miguel dos Milagres, AL), com as três ofertas da campanha. O repositório manteve o nome da primeira versão (3 noites + jantar).
 
 No ar em: https://beatriz-moraes082.github.io/lp-villa-da-mata-3-noites/
 
@@ -10,28 +10,33 @@ No ar em: https://beatriz-moraes082.github.io/lp-villa-da-mata-3-noites/
 
 ## Reserva e rastreamento
 
-A busca de datas abre o motor do Soufoco já com as datas (`villadamata.soufoco.com.br/search/AAAA-MM-DD/AAAA-MM-DD/adultos`), com mínimo de 3 noites. Os botões de WhatsApp vão para (82) 99317-9086 com a mensagem da oferta e as datas escolhidas.
+Todos os botões levam para o WhatsApp da pousada, (82) 99317-9086, com a mensagem da oferta e as datas escolhidas na busca. A página não leva para o motor de reservas.
 
 A página carrega o GTM do site (`GTM-N87QTJHH`) e envia para o `dataLayer`:
 
 | Evento | Quando | Campos |
 |---|---|---|
-| `clique_motor` | clique em "Ver disponibilidade" e links do motor | `oferta`, `origem`, `checkin`, `checkout` |
 | `clique_whatsapp` | clique em qualquer botão de WhatsApp | `oferta`, `origem`, `checkin`, `checkout` |
 
-Os acionadores e as tags de conversão (Google Ads, GA4, Meta) precisam ser criados no GTM, usando esses dois eventos personalizados.
+Os acionadores e as tags de conversão (Google Ads, GA4, Meta) precisam ser criados no GTM, usando esse evento personalizado.
 
-## Regras da oferta (Green Friday, definidas em out/2026)
+## Regras da Green Friday (definidas em out/2026)
 
-- A cada 3 diárias, um jantar para o casal no Bistrô (6 diárias, dois jantares).
-- Vale para reservas feitas de 1º a 30/11/2026, só pelos canais diretos (site/motor próprio e WhatsApp). Não vale no Booking.
-- Hospedagem em qualquer data do ano, todos os dias da semana, sem bloqueio de datas especiais (inclusive janeiro).
-- Pagamento em até 6x no cartão.
+Reservas feitas de 1º a 30/11/2026, só pelos canais diretos (site/motor próprio e WhatsApp). Não vale no Booking. As ofertas não se somam: o cliente escolhe uma.
+
+| Oferta | Condição | Hospedagem |
+|---|---|---|
+| Desconto progressivo | 2 diárias 15%, 3 diárias 20%, 4 ou mais 25% | maio a outubro (2027) |
+| 3 diárias + jantar | a cada 3 diárias, um jantar para o casal | qualquer data |
+| Espaço de eventos | 25% na locação do espaço | qualquer mês |
+
+Todos os dias da semana, sem bloqueio de datas especiais (inclusive janeiro). Pagamento em até 6x.
+
+A busca de datas exige no mínimo 2 noites e o resumo mostra qual oferta as datas permitem. O `dataLayer` recebe `oferta` = `desconto_progressivo`, `3_diarias_jantar`, `espaco_eventos` ou `green_friday` (botões gerais).
 
 ## Pendências
 
-- Trechos marcados com `A CONFIRMAR` no código: o que entra no jantar e se a oferta vale também para as suítes.
-- A promoção precisa estar cadastrada no motor (Foco). Se a campanha tiver link ou cupom próprio, colocar no link do motor.
+- Trecho marcado com `A CONFIRMAR` no código: o que entra no jantar.
 - A nota do Google (4,8 com 66 avaliações, em 28/10/2026) está escrita na página. Atualizar quando mudar.
 - Se a página for para um subdomínio da pousada, trocar o endereço em `canonical`, `og:url`, `og:image` e no JSON-LD.
 
