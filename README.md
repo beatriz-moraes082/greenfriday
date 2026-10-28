@@ -2,11 +2,33 @@
 
 Landing page da oferta do Sítio Villa da Mata (São Miguel dos Milagres, AL): reserve a partir de 3 noites e ganhe um jantar a dois no Bistrô.
 
-- `index.html`: página única, sem build. Fontes do Google Fonts e Lenis (rolagem suave) pelo jsDelivr.
-- `img/`: fotos do site da pousada.
+No ar em: https://beatriz-moraes082.github.io/lp-villa-da-mata-3-noites/
+
+- `index.html`: página única, sem build. Lenis (rolagem suave) vem do jsDelivr.
+- `img/`: fotos do site da pousada em WebP, imagem de compartilhamento (`og-3-noites-jantar.jpg`, 1200×630) e ícones.
+- `fonts/`: Marcellus e Figtree (Google Fonts, licença OFL), hospedadas aqui para não travar o carregamento.
+
+## Reserva e rastreamento
 
 A busca de datas abre o motor do Soufoco já com as datas (`villadamata.soufoco.com.br/search/AAAA-MM-DD/AAAA-MM-DD/adultos`), com mínimo de 3 noites. Os botões de WhatsApp vão para (82) 99317-9086 com a mensagem da oferta e as datas escolhidas.
 
-Antes de colocar no ar:
-- colar o GTM do site no `<head>` (marcado no código);
-- revisar os trechos marcados com `A CONFIRMAR` (o que inclui o jantar, se vale para suítes e feriados, e se quem reserva pelo site ganha o jantar).
+A página carrega o GTM do site (`GTM-N87QTJHH`) e envia para o `dataLayer`:
+
+| Evento | Quando | Campos |
+|---|---|---|
+| `clique_motor` | clique em "Ver disponibilidade" e links do motor | `oferta`, `origem`, `checkin`, `checkout` |
+| `clique_whatsapp` | clique em qualquer botão de WhatsApp | `oferta`, `origem`, `checkin`, `checkout` |
+
+Os acionadores e as tags de conversão (Google Ads, GA4, Meta) precisam ser criados no GTM, usando esses dois eventos personalizados.
+
+## Pendências
+
+- Revisar os trechos marcados com `A CONFIRMAR` (o que inclui o jantar, se vale para suítes e feriados, se quem reserva pelo site ganha o jantar).
+- A nota do Google (4,8 com 66 avaliações, em 28/10/2026) está escrita na página. Atualizar quando mudar.
+- Se a página for para um subdomínio da pousada, trocar o endereço em `canonical`, `og:url`, `og:image` e no JSON-LD.
+
+## Quando a oferta acabar
+
+Escolher um dos dois:
+1. Redirecionar a página para o site da pousada (no GitHub Pages: trocar o `index.html` por um com `<meta http-equiv="refresh" content="0; url=https://www.sitiovilladamata.com.br">` e `<link rel="canonical" href="https://www.sitiovilladamata.com.br">`).
+2. Ou manter a página, mas com `<meta name="robots" content="noindex">` no `<head>` e um aviso de oferta encerrada.
