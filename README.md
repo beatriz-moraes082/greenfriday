@@ -2,7 +2,7 @@
 
 Landing page da Green Friday do Sítio Villa da Mata (São Miguel dos Milagres, AL), com as três ofertas da campanha. O repositório começou como a LP "3 noites + jantar" e foi renomeado para greenfriday em 28/10/2026.
 
-No ar em: https://beatriz-moraes082.github.io/greenfriday/
+No ar em: https://greenfriday.sitiovilladamata.com.br/ (o endereço antigo, https://beatriz-moraes082.github.io/greenfriday/, redireciona para cá)
 
 - `index.html`: página única, sem build. Lenis (rolagem suave) vem do jsDelivr.
 - `img/`: fotos do site da pousada em WebP, imagem de compartilhamento (`og-green-friday.jpg`, 1200×630) e ícones.
@@ -38,7 +38,7 @@ A busca de datas exige no mínimo 2 noites e o resumo mostra qual oferta as data
 
 - Trecho marcado com `A CONFIRMAR` no código: o que entra no jantar.
 - A nota do Google (4,8 com 66 avaliações, em 28/10/2026) está escrita na página. Atualizar quando mudar.
-- Se a página for para um subdomínio da pousada, trocar o endereço em `canonical`, `og:url`, `og:image` e no JSON-LD.
+- O subdomínio é um CNAME `greenfriday` → `beatriz-moraes082.github.io` na Zona de DNS da Locaweb (criado em 29/10/2026). O domínio da pousada fica na Locaweb, não na Hostinger.
 
 ## Quando a oferta acabar (depois de 30/11/2026)
 
