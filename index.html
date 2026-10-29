@@ -246,6 +246,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
 @media (hover:hover) and (pointer:fine){.campo input[type=date]{pointer-events:none}}
 .busca .btn{min-height:100%;padding:0 2.8em;border:0}
 .resumo{grid-column:1/-1;margin:0;padding:13px 28px;border-top:1px solid var(--linha);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 24px;font-size:.88rem;color:var(--cinza)}
+.resumo[hidden]{display:none}
 .resumo strong{color:var(--tinta);font-weight:500}
 .resumo .aviso{color:var(--marrom-esc)}
 @media (max-width:960px){
@@ -509,8 +510,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
         </select>
       </div>
       <a class="btn js-wa" href="https://wa.me/5582993179086" data-datas="1" target="_blank" rel="noopener">Reservar pelo WhatsApp</a>
-      <p class="resumo" aria-live="polite">
-        <span><span id="resumo-datas"></span> <span class="aviso" id="aviso" hidden>Ajustamos a partida para 2 noites, o mínimo para as condições de novembro.</span></span>
+      <p class="resumo" id="resumo" aria-live="polite" hidden>
+        <span class="aviso" id="aviso">Ajustamos a partida para 2 noites, o mínimo para as condições de novembro.</span>
       </p>
     </form>
   </div>
@@ -779,7 +780,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
   var inEl = document.getElementById("checkin");
   var outEl = document.getElementById("checkout");
   var adEl = document.getElementById("adultos");
-  var resumoEl = document.getElementById("resumo-datas");
+  var resumoEl = document.getElementById("resumo");
   var avisoEl = document.getElementById("aviso");
   var barraInfo = document.getElementById("barra-info");
 
@@ -809,7 +810,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
     outEl.min = iso(minOut);
     var ajustou = false;
     if (!outEl.value || parse(outEl.value) < minOut){ outEl.value = iso(minOut); ajustou = !!(ev && ev.target === outEl); }
-    avisoEl.hidden = !ajustou;
+    resumoEl.hidden = !ajustou;
     var n = Math.round((parse(outEl.value) - ci) / 864e5);
     var ad = adEl.value;
     var txt = n + " noites, de " + longo(inEl.value) + " a " + longo(outEl.value);
@@ -823,7 +824,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
     var opcoes = [];
     if (pct) opcoes.push(pct + "% de desconto nas diárias");
     if (jantares) opcoes.push(jantares + (jantares === 1 ? " jantar" : " jantares") + " para o casal no Bistrô");
-    resumoEl.innerHTML = "<strong>" + n + " noites</strong> · " + (opcoes.length ? opcoes.join(" ou ") : "com 3 noites, um jantar para o casal no Bistrô");
+
     barraInfo.textContent = txt;
     var datas = " Check-in " + br(inEl.value) + ", check-out " + br(outEl.value) + " (" + n + " noites), " + ad + (ad === "1" ? " adulto." : " adultos.");
     document.querySelectorAll(".js-wa").forEach(function(a){
