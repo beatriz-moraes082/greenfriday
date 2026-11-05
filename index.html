@@ -987,6 +987,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
     // O Contact do pixel do Meta sai pela tag do GTM (com event_id); não disparar aqui, senão conta em dobro
   });
 
+  // Clique em "Escolher datas" (botão do topo e os outros que levam à busca): o GTM não tem tag para isso
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href="#datas"]');
+    if (!a) return;
+    var origem = a.closest(".topo") ? "topo" : ((a.closest("section[id]") || {}).id || "pagina");
+    window.dataLayer.push({ event: "clique_escolher_datas", origem: origem });
+    if (window.fbq) fbq("trackCustom", "EscolherDatas", { content_name: "green_friday", content_category: origem });
+  });
+
   // Rolagem suave
   var lenis = null;
   if (window.Lenis && !reduzido) {
