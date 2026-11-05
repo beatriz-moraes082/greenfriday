@@ -984,8 +984,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.f
       checkin: document.getElementById("checkin").value,
       checkout: document.getElementById("checkout").value
     });
-    // Pixel do Meta (carregado pelo GTM): Contact direto daqui, o GTM não tem tag para esse clique
-    if (window.fbq) fbq("track", "Contact", { content_name: "green_friday", content_category: origem });
+    // O Contact do pixel do Meta sai pela tag do GTM (com event_id); não disparar aqui, senão conta em dobro
   });
 
   // Rolagem suave
